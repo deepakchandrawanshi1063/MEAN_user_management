@@ -1,0 +1,71 @@
+<h1 mat-dialog-title>Register User</h1>
+<form [formGroup]="userForm" (ngSubmit)="onSubmitUserFormData()">
+  <mat-dialog-content class="mat-typography">
+    <div style="display: flex; gap: 20px">
+      <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input
+          matInput
+          #name
+          maxlength="256"
+          placeholder="enter name"
+          formControlName="name"
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input
+          matInput
+          #email
+          placeholder="enter email"
+          type="email"
+          formControlName="email"
+        />
+      </mat-form-field>
+    </div>
+    <div style="display: flex; gap: 20px">
+      <mat-form-field appearance="outline">
+        <mat-label>Phone</mat-label>
+        <input
+          matInput
+          #phone
+          maxlength="10"
+          placeholder="enter phone no."
+          formControlName="phone"
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Date Of Birth</mat-label>
+        <input
+          matInput
+          #dob
+          placeholder="select dob"
+          type="date"
+          formControlName="dob"
+        />
+      </mat-form-field>
+    </div>
+    <div style="display: flex; gap: 20px">
+      <mat-form-field appearance="outline">
+        <mat-label>Address</mat-label>
+        <input
+          matInput
+          #address
+          maxlength="256"
+          placeholder="enter address"
+          formControlName="address"
+          type="text"
+        />
+      </mat-form-field>
+      <mat-radio-group aria-label="Select gender" formControlName="gender">
+        <mat-radio-button value="male">Male</mat-radio-button>
+        <mat-radio-button value="female">Fe-Male</mat-radio-button>
+        <mat-radio-button value="others">Others</mat-radio-button>
+      </mat-radio-group>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close type="button">Cancel</button>
+    <button mat-button type="submit" cdkFocusInitial>Submit</button>
+  </mat-dialog-actions>
+</form>
