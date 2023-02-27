@@ -28,7 +28,7 @@ export class UserAddEditDialogComponent implements OnInit {
   onSubmitUserFormData(){
 if(this.userForm.valid){
   if(this.data){
-    this.userService.updateUser(this.data._id,this.data).subscribe({
+    this.userService.updateUser(this.data._id,this.userForm.value).subscribe({
       next:(res:any)=>{
         alert(res.message);
         this.dialogRef.close(true)
